@@ -1,0 +1,177 @@
+:root {
+  --color-vanilla: #eae2b7;
+  --color-xanthous: #fcbf49;
+  --color-orange-wheel: #f77f00;
+  --color-fire-engine-red: #d62828;
+  --prussian-blue: #003049;
+  --link: var(--prussian-blue);
+  --hover: var(--color-fire-engine-red);
+}
+
+body {
+  background-color: var(--color-vanilla);
+  color: var(--prussian-blue);
+  font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "BioRhyme", serif;
+  margin-top: 0;
+}
+
+h1::before,
+h2::before,
+h3::before {
+  content: "»";
+  font-size: 1.3em;
+  margin-right: 0.25rem;
+}
+
+h1 {
+  margin: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 small {
+  opacity: 0.75;
+}
+
+.x-small {
+  font-size: x-small;
+}
+
+.small {
+  font-size: small;
+}
+
+.large {
+  font-size: large;
+}
+
+.x-large {
+  font-family: "BioRhyme", serif;
+  font-size: x-large;
+}
+
+a:link,
+a:visited {
+  color: var(--link);
+  transition: color 0.2s linear;
+}
+
+a:hover,
+a:active {
+  color: var(--hover);
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+.inline-list {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+header p {
+  margin: 0;
+}
+
+main {
+  background-color: var(--color-xanthous);
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  padding: 1rem;
+}
+
+.work-experience {
+  background-color: var(--color-orange-wheel);
+  flex-grow: 2;
+}
+
+aside,
+footer {
+  --link: var(--color-vanilla);
+  --hover: var(--color-xanthous);
+  background-color: var(--color-fire-engine-red);
+  color: var(--color-vanilla);
+  padding: 1rem;
+}
+
+footer {
+  background-color: var(--prussian-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 480px) {
+  h1 {
+    align-items: baseline;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "main aside"
+      "footer footer";
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  footer {
+    flex-direction: row;
+    grid-area: footer;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    grid-template-areas:
+      ". header header ."
+      ". main aside ."
+      ". footer footer .";
+    grid-template-columns: auto 640px 384px auto;
+    grid-template-rows: auto auto auto;
+  }
+  header {
+    align-items: baseline;
+    flex-direction: row;
+  }
+}
