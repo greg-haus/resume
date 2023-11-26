@@ -1,8 +1,8 @@
 :root {
-  --color-vanilla: #eae2b7;
-  --color-xanthous: #fcbf49;
-  --color-orange-wheel: #f77f00;
-  --color-fire-engine-red: #d62828;
+  --color-vanilla: #f0eed0;
+  --color-xanthous: #fcd992;
+  --color-orange-wheel: #eaad6c;
+  --color-fire-engine-red: #8c2c2c;
   --prussian-blue: #003049;
   --link: var(--prussian-blue);
   --hover: var(--color-fire-engine-red);
